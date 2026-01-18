@@ -1,4 +1,4 @@
-export function Resume({generalInfoData, eduList}) {
+export function Resume({generalInfoData, eduList, projectList}) {
     const form = generalInfoData;
 
     return (
@@ -35,7 +35,23 @@ export function Resume({generalInfoData, eduList}) {
                 <h2>Projects</h2>
                 <hr />
                 <ul>
-
+                    {projectList.map((project) => {
+                        return (
+                            <li key={project.id}>
+                                <div className="projectInfo">
+                                    <div className="projectName">{project.projectName}</div>
+                                    <div className="projectLocation">{project.projectLocation}</div>
+                                </div>
+                                <div className="projectDetails">
+                                    <div className="projectRole">{project.projectRole}</div>
+                                    <div className="duration">{project.start} {project.end}</div>
+                                </div>
+                                {project.description.split(/\r?\n/).map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
+                            </li>
+                        )
+                    })}
                 </ul>
             </section>
         </div>

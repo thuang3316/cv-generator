@@ -1,5 +1,3 @@
-import '../styles/navigation.css'
-
 export function Navigation({ currentContent, handleCurrentContent }) {
   const items = [
     "General",
@@ -15,7 +13,7 @@ export function Navigation({ currentContent, handleCurrentContent }) {
         <button
           key={index}
           onClick={() => handleCurrentContent(item)}
-          className={currentContent === item ? "selected" : ""}
+          className={currentContent === item ? "selected navBtn" : "navBtn"}
         >
           {item}
         </button>

@@ -37,11 +37,11 @@ export function Education({eduList, setEduList}) {
     }
 
     return (
-        <div className="eduForm">
+        <div className="eduForm form">
             <h2>Education</h2>
 
             {eduList.map(edu => (
-                <div className="eduInput" key={edu.id}>
+                <div className="eduInput formInput" key={edu.id}>
                     <form onSubmit={e => e.preventDefault()}>
                         <div className="input-group">
                             <label htmlFor="schoolName">School Name: </label>
@@ -79,7 +79,7 @@ export function Education({eduList, setEduList}) {
                                 placeholder="Enter Major Name"
                             />
                         </div>
-                        <div className="date-container">
+                        <div className="date-container inline-container">
                             <div className="input-group">
                                 <label htmlFor="start">Start Time: </label>
                                 <input 
@@ -106,9 +106,7 @@ export function Education({eduList, setEduList}) {
                             </div>
                         </div>
                     </form>
-                    {eduList.length !== 1 && (
-                        <button type="button" className="delete-btn" onClick={() => handleDelete(edu.id)}>Delete</button>
-                    )}
+                    <button type="button" className="delete-btn" onClick={() => handleDelete(edu.id)}>Delete</button>
                 </div>
             ))}
 

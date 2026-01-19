@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Projects({projectList, setProjectList}) {
+export function Works({workList, setWorkList}) {
     const [editing, setEditing] = useState(true);
     
     function handleEditBtn() {
@@ -12,12 +12,12 @@ export function Projects({projectList, setProjectList}) {
     }
 
     function handleAdd(){
-        setProjectList(prev => 
+        setWorkList(prev => 
         [...prev, {
             id: crypto.randomUUID(),
-            projectName: "",
-            projectLocation: "",
-            projectRole: "",
+            workName: "",
+            workLocation: "",
+            workRole: "",
             start: "",
             end: "",
             description: ""
@@ -26,58 +26,58 @@ export function Projects({projectList, setProjectList}) {
     }
 
     function handleDelete(id) {
-        setProjectList(prev => prev.filter(project => project.id !== id));
+        setWorkList(prev => prev.filter(work => work.id !== id));
     }
 
     function handleChange(id, name, value) {
-        setProjectList(prev => 
-            prev.map(project =>
-                project.id === id ? {...project, [name]:value} : project
+        setWorkList(prev => 
+            prev.map(work =>
+                work.id === id ? {...work, [name]:value} : work
             )
         )
     }
 
     return (
-        <div className="projectForm form">
-            <h2>Projects</h2>
+        <div className="workForm form">
+            <h2>Work Experience</h2>
 
-            {projectList.map(project => (
-                <div className="projectInput formInput" key={project.id}>
+            {workList.map(work => (
+                <div className="workInput formInput" key={work.id}>
                     <form onSubmit={e => e.preventDefault()}>
                         <div className="input-group">
-                            <label htmlFor="projectName">Project Name: </label>
+                            <label htmlFor="workName">Company Name: </label>
                             <input 
                                 type="text" 
-                                name="projectName" 
-                                id="projectName" 
-                                value={project.projectName}
-                                onChange={(e) => handleChange(project.id, 'projectName', e.target.value)}
+                                name="workName" 
+                                id="workName" 
+                                value={work.workName}
+                                onChange={(e) => handleChange(work.id, 'workName', e.target.value)}
                                 readOnly={!editing}
-                                placeholder="Enter Project Name"
+                                placeholder="Enter Company Name"
                             />
                         </div>
                         <div className="input-group">
-                            <label htmlFor="projectLocation">Project Location: </label>
+                            <label htmlFor="workLocation">Company Location: </label>
                             <input 
                                 type="text" 
-                                name="projectLocation" 
-                                id="projectLocation" 
-                                value={project.projectLocation}
-                                onChange={(e) => handleChange(project.id, 'projectLocation', e.target.value)}
+                                name="workLocation" 
+                                id="workLocation" 
+                                value={work.workLocation}
+                                onChange={(e) => handleChange(work.id, 'workLocation', e.target.value)}
                                 readOnly={!editing}
-                                placeholder="Enter Project Location"
+                                placeholder="Enter Company Location"
                             />
                         </div>
                         <div className="input-group">
-                            <label htmlFor="projectRole">Project Role: </label>
+                            <label htmlFor="workRole">Role: </label>
                             <input 
                                 type="text" 
-                                name="projectRole" 
-                                id="projectRole" 
-                                value={project.projectRole}
-                                onChange={(e) => handleChange(project.id, 'projectRole', e.target.value)}
+                                name="workRole" 
+                                id="workRole" 
+                                value={work.workRole}
+                                onChange={(e) => handleChange(work.id, 'workRole', e.target.value)}
                                 readOnly={!editing}
-                                placeholder="Enter Project Role"
+                                placeholder="Enter Your Role"
                             />
                         </div>
                         <div className="date-container inline-container">
@@ -87,8 +87,8 @@ export function Projects({projectList, setProjectList}) {
                                     type="date" 
                                     name="start" 
                                     id="start" 
-                                    value={project.start}
-                                    onChange={(e) => handleChange(project.id, 'start', e.target.value)}
+                                    value={work.start}
+                                    onChange={(e) => handleChange(work.id, 'start', e.target.value)}
                                     readOnly={!editing}
                                     placeholder="Enter Start Time"
                                 />
@@ -99,8 +99,8 @@ export function Projects({projectList, setProjectList}) {
                                     type="date" 
                                     name="end" 
                                     id="end" 
-                                    value={project.end}
-                                    onChange={(e) => handleChange(project.id, 'end', e.target.value)}
+                                    value={work.end}
+                                    onChange={(e) => handleChange(work.id, 'end', e.target.value)}
                                     readOnly={!editing}
                                     placeholder="Enter End Time"
                                 />
@@ -112,15 +112,14 @@ export function Projects({projectList, setProjectList}) {
                                 type="text" 
                                 name="description" 
                                 id="description" 
-                                value={project.description}
-                                onChange={(e) => handleChange(project.id, 'description', e.target.value)}
+                                value={work.description}
+                                onChange={(e) => handleChange(work.id, 'description', e.target.value)}
                                 readOnly={!editing}
                                 placeholder="Enter Description (Press enter to start a new line)"
                             />
                         </div>
                     </form>
-                    <button type="button" className="delete-btn" onClick={() => handleDelete(project.id)}>Delete</button>
-                    
+                    <button type="button" className="delete-btn" onClick={() => handleDelete(work.id)}>Delete</button>
                 </div>
             ))}
 

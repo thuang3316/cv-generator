@@ -20,10 +20,10 @@ export function General({generalInfoData, setGeneralInfoData}) {
     }
 
     return (
-        <div className="generalForm">
+        <div className="generalForm form">
             <h2>General Information</h2>
                 <form onSubmit={e => e.preventDefault()}>
-                    <div className="fullName">
+                    <div className="fullName inline-container">
                         <div className="input-group">
                             <label htmlFor="firstName">First Name: </label>
                             <input 
@@ -61,7 +61,7 @@ export function General({generalInfoData, setGeneralInfoData}) {
                             placeholder="Enter Address"
                         />
                     </div>
-                    <div className="contact-container">
+                    <div className="contact-container inline-container">
                         <div className="input-group">
                             <label htmlFor="email">Email: </label>
                             <input 

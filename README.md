@@ -7,3 +7,5 @@ I also add the download feature to this project using [html2pdf.js](https://gith
 There is an example resume available. You can just click the 'Show example' button on the top right corner.
 
 In the future, I might add more features that allow users to customize the resume and have more freedom designing the resume.
+
+Check out the [demo](https://cv-app-ecru-phi.vercel.app/).

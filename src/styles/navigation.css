@@ -1,0 +1,125 @@
+.forms {
+  display: flex;
+  gap: 20px;
+}
+
+.forms nav {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  gap: 5px;
+  position: sticky;
+  top: 30px;
+}
+
+nav>.navBtn {
+  max-width: 200px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: white;
+  transition: opacity 0.2s;
+}
+
+nav>.navBtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.navBtn.selected {
+  background-color: #333;
+  color: white;
+}
+
+.navBtn.selected:hover {
+  opacity: 1;
+}
+
+/* input form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.form form>* {
+  margin-top: 4px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form button {
+  font-size: 20px;
+}
+
+.delete-btn {
+  background-color: crimson;
+  color: white;
+  max-width: 150px;
+  border-radius: 5px;
+  border: none;
+  padding: 4px 8px;
+  align-self: center;
+  transition: opacity 0.2s;
+}
+
+.inline-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+
+  padding: 10px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  resize: vertical; /* allow only vertical resize */
+  box-sizing: border-box;
+}
+
+.control-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-btns>button {
+  background-color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: opacity 0.2s;
+}
+
+.control-btns>button:hover, .delete-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

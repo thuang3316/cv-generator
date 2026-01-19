@@ -1,16 +1,9 @@
-# React + Vite
+# React-based Online CV Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project uses React to build an online CV generator that allows users to generate a resume based on their personal information. (including general info, education, projects, work experience and skills)
 
-Currently, two official plugins are available:
+I also add the download feature to this project using [html2pdf.js](https://github.com/eKoopmans/html2pdf.js). This way we can preserve the CSS styling of the resume when transforming it to pdf.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+There is an example resume available. You can just click the 'Show example' button on the top right corner.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+In the future, I might add more features that allow users to customize the resume and have more freedom designing the resume.
